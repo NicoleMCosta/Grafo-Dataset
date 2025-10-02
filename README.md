@@ -1,3 +1,4 @@
-# Grafo-Dataset
-## Tarefa 1 da matéria de Teoria dos Grafos
-### Equipe: Nicole Costa e André [ ]
+# Grafo-Dataset  
+**Equipe:** Nicole Costa e André Vinícius Trentini  
+
+Este projeto é parte da matéria de Teoria de Grafos.
