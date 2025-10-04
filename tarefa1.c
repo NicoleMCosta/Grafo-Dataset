@@ -2,6 +2,10 @@
 
 void min_max_normalize(double arr[], int size);
 
+double distancia(Objetos dataA, Objetos dataB){
+    return sqrt(pow(dataB.X - dataA.X,2) + pow(dataB.Y - dataA.Y,2.0) + pow(dataB.Z - dataA.Z, 2.0) + pow(dataB.w - dataA.w, 2.0));
+}
+
 int main(){
     FILE *csvpt = fopen("my_dataset.csv", "r");
     
@@ -9,9 +13,9 @@ int main(){
     
     //listCSV(dados, SIZE);
     int i =0;
-    double dados1 = sqrt(pow(dados[i+1].X - dados[i].X,2) + pow(dados[i+1].Y - dados[i].Y,2.0) + pow(dados[i+1].Z - dados[i].Z, 2.0) + pow(dados[i+1].w - dados[i].w, 2.0));
-    double dados2 = sqrt(pow(dados[i+2].X - dados[i+1].X,2) + pow(dados[i+2].Y - dados[i+1].Y,2.0) + pow(dados[i+2].Z - dados[i+1].Z, 2.0) + pow(dados[i+2].w - dados[i+1].w, 2.0));
-    double dados3 = sqrt(pow(dados[i+3].X - dados[i+2].X,2) + pow(dados[i+3].Y - dados[i+2].Y,2.0) + pow(dados[i+3].Z - dados[i+2].Z, 2.0) + pow(dados[i+3].w - dados[i+2].w, 2.0));
+    double dados1 = distancia(dados[i+1],dados[i]);
+    double dados2 = distancia(dados[i+2],dados[i+1]);
+    double dados3 = distancia(dados[i+3],dados[i+2]);
     double teste[] = {dados1, dados2,dados3};
     
     for (int i = 0; i < 3; i++) {
