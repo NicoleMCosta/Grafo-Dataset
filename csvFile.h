@@ -12,6 +12,11 @@ typedef struct Objetos{
     float w;
 }Objetos;
 
+typedef struct {
+    int ponto1;
+    int ponto2;
+    double distancia;
+} DistanciaPar;
 
 Objetos* openCSV(FILE *csv){
     if(csv == NULL){
