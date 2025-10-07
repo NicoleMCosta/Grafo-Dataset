@@ -13,13 +13,13 @@ int main(){
         printf("Erro ao abrir o arquivo my_dataset.csv\n");
         return 1;
     }
-
+    
     Objetos *dados = openCSV(csvpt);
     if (dados == NULL) {
         fclose(csvpt);
         return 1;
     }
-
+    
     // O número de combinações de pares é n*(n-1)/2
     int num_combinacoes = SIZE * (SIZE - 1) / 2;
     DistanciaPar *distancias = malloc(num_combinacoes * sizeof(DistanciaPar));
@@ -40,7 +40,7 @@ int main(){
             k++;
         }
     }
-
+    DistanciasPar *copiaDistancias = distancas;
     // Normaliza as distâncias
     min_max_normalize(distancias, num_combinacoes);
 
@@ -54,9 +54,9 @@ int main(){
         return 1;
     }
 
-    fprintf(output_csv, "ponto1,ponto2,distancia_normalizada\n");
+    fprintf(output_csv, "ponto1,coordenada1,ponto2,coordenada2,distancia,distancia_normalizada\n");
     for (int i = 0; i < num_combinacoes; i++) {
-        fprintf(output_csv, "%d,%d,%f\n", distancias[i].ponto1 + 1, distancias[i].ponto2 + 1, distancias[i].distancia);
+        fprintf(output_csv, "%d,%d,%f,%f\n", distancias[i].ponto1 + 1,dados[distancias[i].ponto1].X ,distancias[i].ponto2 + 1,dados[distancias[i].ponto2] ,copiaDistancias.distancia , distancias[i].distancia);
     }
 
     printf("Arquivo 'distances.csv' criado com sucesso!\n");
