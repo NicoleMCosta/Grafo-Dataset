@@ -56,7 +56,7 @@ int main(){
 
     fprintf(output_csv, "ponto1,coordenada1,ponto2,coordenada2,distancia,distancia_normalizada\n");
     for (int i = 0; i < num_combinacoes; i++) {
-        fprintf(output_csv, "%d,%d,%f,%f\n", distancias[i].ponto1 + 1,dados[distancias[i].ponto1].X ,distancias[i].ponto2 + 1,dados[distancias[i].ponto2] ,copiaDistancias.distancia , distancias[i].distancia);
+        fprintf(output_csv, "%d,,%f,%d,%f,%f,%f\n", distancias[i].ponto1 + 1,dados[distancias[i].ponto1].X ,distancias[i].ponto2 + 1,dados[distancias[i].ponto2] ,copiaDistancias.distancia , distancias[i].distancia);
     }
 
     printf("Arquivo 'distances.csv' criado com sucesso!\n");
