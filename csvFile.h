@@ -18,6 +18,8 @@ typedef struct {
     double distancia;
 } DistanciaPar;
 
+
+
 Objetos* openCSV(FILE *csv){
     if(csv == NULL){
         printf("Erro ao abrir arquivo\n");

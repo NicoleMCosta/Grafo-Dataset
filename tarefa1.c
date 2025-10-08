@@ -1,4 +1,4 @@
-#include "csvFile.h"
+#include "limiar.h"
 
 void min_max_normalize(DistanciaPar arr[], int size);
 
@@ -40,10 +40,11 @@ int main(){
             k++;
         }
     }
-
+    
     // Normaliza as distâncias
     min_max_normalize(distancias, num_combinacoes);
-
+    // printf("\nNUM COMB%i\n", num_combinacoes);
+    
     // Salva o resultado em um novo arquivo CSV
     FILE *output_csv = fopen("distances.csv", "w");
     if (output_csv == NULL) {
@@ -54,13 +55,17 @@ int main(){
         return 1;
     }
 
-    fprintf(output_csv, "ponto1,ponto2,distancia_normalizada\n");
+    // fprintf(output_csv, "ponto1,ponto2,distancia_normalizada\n");
     for (int i = 0; i < num_combinacoes; i++) {
         fprintf(output_csv, "%d,%d,%f\n", distancias[i].ponto1 + 1, distancias[i].ponto2 + 1, distancias[i].distancia);
     }
 
     printf("Arquivo 'distances.csv' criado com sucesso!\n");
-
+    limiares(output_csv, 0.0, num_combinacoes);
+    limiares(output_csv, 0.3, num_combinacoes);
+    limiares(output_csv, 0.5, num_combinacoes);
+    limiares(output_csv, 0.9, num_combinacoes);
+    
     // Libera a memória e fecha os arquivos
     fclose(output_csv);
     free(distancias);
