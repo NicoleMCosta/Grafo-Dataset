@@ -9,11 +9,6 @@ double distancia(Objetos dataA, Objetos dataB){
 int main(){
     FILE *csvpt = fopen("my_dataset.csv", "r");
 
-    if (csvpt == NULL) {
-        printf("Erro ao abrir o arquivo my_dataset.csv\n");
-        return 1;
-    }
-
     Objetos *dados = openCSV(csvpt);
     if (dados == NULL) {
         fclose(csvpt);
@@ -61,11 +56,15 @@ int main(){
     }
 
     printf("Arquivo 'distances.csv' criado com sucesso!\n");
+
+
+    //LIMIARES
     limiares(output_csv, 0.0, num_combinacoes);
     limiares(output_csv, 0.3, num_combinacoes);
     limiares(output_csv, 0.5, num_combinacoes);
     limiares(output_csv, 0.9, num_combinacoes);
     
+
     // Libera a memória e fecha os arquivos
     fclose(output_csv);
     free(distancias);
@@ -74,8 +73,6 @@ int main(){
 
     return 0;
 }
-
-
 
 void min_max_normalize(DistanciaPar arr[], int size) {
     if (size == 0) return;

@@ -50,3 +50,17 @@ void listCSV(Objetos *data, int n){
         printf("caso_%d: %.1f %.1f %.1f %.1f\n", data[i].caso+1, data[i].X, data[i].Y, data[i].Z, data[i].w);
     }
 }
+
+// int openFiles(FILE **f0, FILE **f3, FILE **f5, FILE **f9,
+//               const char *name0, const char *name3, const char *name5, const char *name9) {
+//     *f0 = fopen(name0, "r");
+//     *f3 = fopen(name3, "r");
+//     *f5 = fopen(name5, "r");
+//     *f9 = fopen(name9, "r");
+
+//     if (!*f0 || !*f3 || !*f5 || !*f9) {
+//         printf("Erro ao abrir os arquivos\n");
+//         return 0;
+//     }
+//     return 1;
+// }
