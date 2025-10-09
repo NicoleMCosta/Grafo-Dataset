@@ -11,7 +11,7 @@ int limiares(FILE *output_csv, float limiar, int num_combinacoes){
         return 1;
     }
     char nomefile[20];
-    sprintf(nomefile, "limiar%.1f.csv", limiar);
+    sprintf(nomefile, "limiar%.1f.csv", limiar+1);
     FILE *limiarcalc= fopen(nomefile, "w");
         if (limiarcalc == NULL) {
             printf("Erro ao criar o arquivo %s\n", nomefile);
@@ -35,5 +35,13 @@ int limiares(FILE *output_csv, float limiar, int num_combinacoes){
 
 
 int buscaBFS(FILE *limiar){
-    
+    DistanciaPar dados;
+    int linhas= 0;
+    while(fscanf(limiar, "%d,%d\n", dados.ponto1, dados.ponto2)==2){
+       float temp = NULL;
+       linhas++;
+       for(int i = 0; i < linhas; i++){
+        //se o 2o elemento do par ja foi visitado nn entra no vetor
+       } 
+    }  
 }
