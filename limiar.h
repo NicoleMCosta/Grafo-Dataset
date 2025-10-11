@@ -67,6 +67,15 @@ void componentes(const char *filename){
         return;
     }
 
+    n_vertices = 0;
+    for (int i = 0; i < SIZE; i++) {
+        vertices[i] = 0;
+        visitado[i] = 0;
+        for (int j = 0; j < SIZE; j++) {
+            matriz[i][j] = 0;
+        }
+    }
+
     for(int i = 0; i < SIZE; i++){
         for (int j = 0; j < SIZE; j++)
             matriz[i][j] = 0;
@@ -82,10 +91,23 @@ void componentes(const char *filename){
         matriz[b][a] = 1;
     }
 
+    // printf("\nVERTICES VETOR  ");
+    // for(int i = 0; i < n_vertices; i++)
+    //     printf("%i, ",vertices[i]);
+
+    // printf("\nMATRIZ DE ADJACÊNCIA (usando rótulos reais)\n");
+    // for (int i = 0; i < 30; i++) {
+    //     for (int j = 0; j < 30; j++) {
+    //         printf("[%d][%d]%d\t", vertices[i], vertices[j], matriz[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+
+
     fclose(csv);
 
     int num_comps = 0;
-    int tamanhos[SIZE];
+    int tamanhos[n_vertices];
 
     for(int i = 0; i < n_vertices; i++){
         if(visitado[i] == 0){

@@ -55,7 +55,7 @@ int main(){
         fprintf(output_csv, "%d,%d,%f\n", distancias[i].ponto1 + 1, distancias[i].ponto2 + 1, distancias[i].distancia);
     }
 
-    printf("Arquivo 'distances.csv' criado com sucesso!\n");
+    // printf("Arquivo 'distances.csv' criado com sucesso!\n");
 
 
     //LIMIARES
