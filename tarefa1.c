@@ -38,7 +38,7 @@ int main(){
     
     // Normaliza as distâncias
     min_max_normalize(distancias, num_combinacoes);
-    // printf("\nNUM COMB%i\n", num_combinacoes);
+    // printf("\nNUM COMB %i\n", num_combinacoes);
     
     // Salva o resultado em um novo arquivo CSV
     FILE *output_csv = fopen("distances.csv", "w");
@@ -64,6 +64,12 @@ int main(){
     limiares(output_csv, 0.5, num_combinacoes);
     limiares(output_csv, 0.9, num_combinacoes);
     
+    componentes("limiar0.0.csv");
+    componentes("limiar0.3.csv");
+    componentes("limiar0.5.csv");
+    componentes("limiar0.9.csv");
+
+
 
     // Libera a memória e fecha os arquivos
     fclose(output_csv);
