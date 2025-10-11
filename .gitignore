@@ -1,7 +1,8 @@
 dist/
 build/
-/.vscode
+.vscode/
 
+distances.csv
 limiar0.0.csv
 limiar0.3.csv
 limiar0.5.csv

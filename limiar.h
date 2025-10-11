@@ -1,5 +1,4 @@
 #include "csvFile.h"
-#include <string.h>
 
 int limiares(FILE *output_csv, float limiar, int num_combinacoes){
     DistanciaPar dados;
